@@ -1,0 +1,22 @@
+header button {
+  display: inline;
+  float: right;
+  margin-right: 5px;
+}
+
+form.new-form-form {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 10px 5px 10px;
+  border: 2px solid #3f51b5;
+  border-radius: 5px;
+}
+
+form.new-form-form label,
+form.new-form-form mat-form-field {
+  margin-right: 10px;
+}
+
+.form-list {
+  margin-bottom: 10px;
+}

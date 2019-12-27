@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSubmit(); newQuestionForm.resetForm();" #newQuestionForm="ngForm">
+  <mat-form-field>
+    <mat-label>Input type</mat-label>
+    <mat-select [(value)]="type" required>
+      <mat-option *ngFor="let type of inputTypes" [value]="type">
+        {{type[0].toUpperCase() + type.slice(1)}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+  <mat-form-field>
+    <input matInput name="title" [(ngModel)]="title" placeholder="Input new question" required/>
+    <mat-error *ngIf="newQuestionForm.form.invalid">
+      Please enter some text
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field *ngIf="type !== 'text'">
+    <input matInput name="options" [(ngModel)]="options" placeholder="Input options for answer" required/>
+    <mat-error *ngIf="newQuestionForm.form.invalid">
+      Please enter options
+    </mat-error>
+  </mat-form-field><br>
+
+  <button mat-raised-button color="primary" type="submit"
+          [disabled]="newQuestionForm.form.invalid" >Submit new</button>
+</form>

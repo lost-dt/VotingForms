@@ -1,0 +1,25 @@
+mat-card {
+  display: inline-block;
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.form-container {
+  height: 100%;
+  display: flex;
+  margin-top: -16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+
+.error {
+  color: red;
+}

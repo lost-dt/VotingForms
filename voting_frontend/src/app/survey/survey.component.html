@@ -1,0 +1,17 @@
+<header>
+  <h1>Survey | <a (click)="navigateToStats()">Survey statistics</a></h1>
+</header>
+<div class="container" *ngIf="formData">
+  <h2>{{ formData.title }}</h2>
+  <form (ngSubmit)="onSubmit()" *ngIf="formGroup" [formGroup]="formGroup">
+
+    <div *ngFor="let question of questions" class="form-row question-card">
+      <app-question [question]="question" [form]="formGroup"></app-question>
+    </div>
+
+    <div class="form-row">
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!formGroup.valid || isSubmitted">Submit your answer</button>
+    </div>
+  </form>
+</div>
